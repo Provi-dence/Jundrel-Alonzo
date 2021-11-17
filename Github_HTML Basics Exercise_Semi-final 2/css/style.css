@@ -1,0 +1,155 @@
+/*
+
+font-family: 'Bebas Neue', cursive;
+font-family: 'DM Mono', monospace;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Roboto', sans-serif;
+
+*/
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #000000;
+    background-image: url('../images/background.png');
+    background-size: 1600px 900px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+h1{
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+    font-size: 120px;
+    color: blanchedalmond;
+    background-color: black;
+    background: opacity(0.4);
+}
+
+h2{
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+    font-size: 60px;
+    color: #ffffff;
+}
+
+.para{
+    text-align: center;
+    z-index: 70;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.container{
+    display: flex;
+    justify-content: space-around;
+    align-items:center ;
+    height: 30vh;
+    width: 100vw;
+}
+.container_1, .container_2{
+    transition: 0.2s ease-in;
+}
+
+.container_1:hover{
+    background-color: rgb(31, 31, 31, 0.8);
+}
+.container_2:hover{
+    background-color: rgb(31, 31, 31, 0.8);
+}
+
+.img{
+    border-radius: 40px;
+    height: 150px;
+    width: 150px;
+    transition: 0.2s ease-in-out;
+}
+
+.img:hover{
+    box-shadow: 0px 0px 20px 5px #;
+    height: 300px;
+    width: 300px;
+}
+.p{
+    transition: 0.4s ease-in-out;
+}
+.p:hover{
+    z-index: 10;
+}
+
+.containerz{
+    display: flex;
+    justify-content: space-around;
+    width: 300px;
+    margin: 60px 0px 0px 0px;
+}
+
+.google{
+    margin: 0px 0px 0px 0px;
+    transition: 0.4s;
+}
+
+.google:hover{
+    opacity: 0.4;
+}
+
+.email{
+    margin: 0px 0px 0px 0px;
+    transition: 0.4s;
+}
+
+.email:hover{
+    opacity: 0.4;
+}
+
+.paragraph{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #272640;
+    padding: 100px 0px 100px 0px;
+}
+
+.pc{
+    width: inherit;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+}
+
+.paragraph1{
+    color: #ff6b6b;
+}
+.paragraph2{
+    color: #4ecdc4;
+}
+.paragraph3{
+    color: #f4d35e;
+}
+.paragraph4{
+    color: #80ed99;
+}
+
+
+
+.foot{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    flex-direction: column;
+    padding: 0px 0px 50px 0px;
+    background-color: #457b9d;
+}
