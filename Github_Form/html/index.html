@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono&family=Montserrat&family=Roboto&display=swap"
+        rel="stylesheet">
+    <style>
+        /*
+        font-family: 'Bebas Neue', cursive;
+        font-family: 'DM Mono', monospace;
+        font-family: 'Montserrat', sans-serif;
+        font-family: 'Roboto', sans-serif;
+        */
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #17043a;
+        }
+
+        .title {
+            margin: 50px 0px 0px 100px;
+        }
+
+        .form-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'DM Mono', monospace;
+            color: #32fbe2;
+            text-shadow: 0 0 10px rgb(50 251 226 / 70%);
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+
+        td {
+            /*border: 2px red dotted;*/
+        }
+
+        .form-container {
+            margin: 40px 0;
+        }
+
+        /*For Textbox*/
+        input[type=text],
+        [type=email] {
+            background: #33126e;
+            border: 2px #33126e solid;
+            height: 35px;
+            width: 300px;
+            padding: 12px 20px;
+            outline: none;
+            border-radius: 3px;
+            transition: 0.4s;
+        }
+
+        input[type=submit],
+        input[type=reset] {
+            background: #33126e;
+            border: 2px #33126e solid;
+            color: #32fbe2;
+            height: 35px;
+            width: 200px;
+            outline: none;
+            transition: 0.4s;
+            text-align: center;
+        }
+
+        input[type=text] {
+            color: white;
+        }
+
+        input[type=submit]:hover,
+        [type=reset]:hover,
+        textarea:hover,
+        input[type=text]:hover,
+        input[type=email]:hover {
+            box-shadow: 0px 0px 20px 0px #17043a inset;
+            color: #fb3264;
+        }
+
+        textarea {
+            background: #33126e;
+            border: 2px #33126e solid;
+            outline: none;
+            padding: 16px 25px;
+            color: white;
+            transition: 0.4s;
+        }
+
+        /* Submit and Clear */
+        .button {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+
+        /* This allow to change the text color of placeholder*/
+        ::-webkit-input-placeholder {
+            color: #ca46ff;
+            opacity: 0.5;
+            transition: 0.3s ease-in-out;
+        }
+
+        /* some sort of animation? */
+        :focus::-webkit-input-placeholder {
+            opacity: 0.3;
+        }
+
+        input[type=text]:focus {
+            border-color: #32fbe2;
+        }
+
+        input[placeholder] {
+            color: white;
+        }
+
+        .labels {
+            padding: 7px 0px 7px 0px;
+        }
+
+        /* for font colors */
+        .t-light {
+            font-family: 'DM Mono', monospace;
+            color: white;
+            text-shadow: 0 0 10px white;
+        }
+
+        .t-lightning-blue {
+            font-family: 'DM Mono', monospace;
+            color: #32fbe2;
+            text-shadow: 0 0 10px #32fbe2;
+        }
+
+        .red {
+            font-family: 'DM Mono', monospace;
+            color: #fb3264;
+            text-shadow: 0 0 10px #fb3264;
+        }
+
+        .orange {
+            font-family: 'DM Mono', monospace;
+            color: #fb8232;
+            text-shadow: 0 0 10px #fb8232;
+        }
+
+        .blue {
+            font-family: 'DM Mono', monospace;
+            color: #3261fb;
+            text-shadow: 0 0 10px #3261fb;
+        }
+
+        .green {
+            font-family: 'DM Mono', monospace;
+            color: #32fb6e;
+            text-shadow: 0 0 10px #32fb6e;
+        }
+
+        .pink {
+            font-family: 'DM Mono', monospace;
+            color: #fb32ae;
+            text-shadow: 0 0 10px #fb32ae;
+        }
+
+        .black {
+            font-family: 'DM Mono', monospace;
+            color: #0c0c0c;
+            text-shadow: 0 0 10px #292929;
+        }
+
+        .violet {
+            font-family: 'DM Mono', monospace;
+            color: #7f32fb;
+            text-shadow: 0 0 10px #7f32fb;
+        }
+
+        #male,
+        #female {
+            margin: 0px 5px 0px 5px;
+        }
+
+        .radio {
+            margin-left: 20px;
+            padding-left: 30px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 0px 10px 0px 0px;
+        }
+
+        .labels {
+            display: flex;
+        }
+
+        .rad {
+            padding: 0px 10px 0px 0px;
+        }
+
+        .radio .rad {
+            height: 15px;
+            width: 15px;
+            border: 1px #32fbe2 solid;
+            display: inline-block;
+            border-radius: 50%;
+            margin: 0px 10px 0px 10px;
+        }
+
+        code {
+            opacity: 0.4;
+            font-size: 10px;
+        }
+
+        /*Dropdown*/
+
+        .dropdown-con {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin: 0px 0px 10px 30px;
+        }
+
+        .dropbtn {
+            background-color: #33126e;
+            color: #32fbe2;
+            padding: 4px;
+            height: 30px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .check-con {
+            display: flex;
+            cursor: pointer;
+        }
+
+        .col1 {
+            margin: 0px 20px 0px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="index.html">
+        <div class="title">
+            <h1>Html Forms</h1>
+            <h3>by: Jundrel L. Alonzo</h3>
+        </div>
+        <div class="form-container">
+            <table>
+                <div class="first-row">
+                    <tr>
+                        <td colspan="2">
+                            <div class="labels">
+                                <p class="t-lightning-blue">
+                                    <label for="yourself"> Say something about yourself! </label>
+                                </p>
+                            </div>
+                            <div class="text-area">
+                                <textarea name="yourself" id="yourself" cols="40" rows="4"
+                                    placeholder="I'm handsome and cute, thus says my Mother..."></textarea>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="l">
+                                <h3>Gender:</h3>
+                            </div>
+                            <div class="labels">
+                                <span class="t-lightning-blue">
+                                    <label for="male" class="radio">
+                                        <span>
+                                            <input name="gender" id="male" type="radio" value="1">
+                                        </span>
+                                        MALE
+                                    </label>
+                                </span>
+                                <span class="t-lightning-blue">
+                                    <label for="female" class="radio">
+                                        <span>
+                                            <input name="gender" id="female" type="radio" value="2">
+                                        </span>
+                                        FEMALE
+                                    </label>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                </div>
+                <div class="second-row">
+                    <tr>
+                        <td>
+                            <div class="fname labels">
+                                <p class="t-lightning-blue">
+                                    <label for="firstname">First name:</label>
+                                </p>
+                            </div>
+                            <div class="textbox-item">
+                                <input type="text" id="firstname" placeholder="Your first name">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Mname labels">
+                                <p class="t-lightning-blue">
+                                    <label for="Midname">Middle name:</label>
+                                </p>
+                            </div>
+                            <div class="textbox-item">
+                                <input type="text" id="Midname" placeholder="Your middile name">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Lname labels">
+                                <p class="t-lightning-blue">
+                                    <label for="lastname">Family name:</label>
+                                </p>
+                            </div>
+                            <div class="textbox-item">
+                                <input type="text" id="lastname" placeholder="Your family name">
+                            </div>
+                        </td>
+                    </tr>
+                </div>
+                <div class="third-row">
+                    <tr>
+                        <td colspan="3">
+                            <div class="labels">
+                                <p class="t-lightning-blue">
+                                    <label for="Home">Home Adress:</label>
+                                </p>
+                            </div>
+                            <div class="text-area">
+                                <textarea name="Home" id="Home" cols="100" rows="2"
+                                    placeholder=" 143 D. Kamungay st. brgy mapagmahal chuchu..."></textarea>
+                            </div>
+                        </td>
+                    </tr>
+                </div>
+                <div class="4th-row">
+                    <tr>
+                        <td>
+                            <div class="Email labels">
+                                <p class="t-lightning-blue">
+                                    <label for="E-mail">Email Adress:</label>
+                                </p>
+                            </div>
+                            <div class="textbox-item">
+                                <input type="email" id="E-mail" placeholder="example@gmail.com">
+                            </div>
+                            <code class="t-lightning-blue">
+                                        We'll never share your email with anyone else.
+                                    </code>
+                        </td>
+                        <td>
+                            <div class="dropdown-con">
+                                <p style="margin: 0px 0px 10px 0px;" class="t-lightning-blue ">Pick a Color</p>
+                                <div class="dropdown">
+                                    <select class="dropbtn">
+                                        <div class="dropdown-content">
+                                            <option value=""></option>
+                                            <option value="red" name="color" class="red">
+                                                Red
+                                            </option>
+                                            <option value="blue" name="color" class="blue">
+                                                Blue
+                                            </option>
+                                            <option value="green" name="color" class="green">
+                                                Green
+                                            </option>
+                                            <option value="orange" name="color" class="orange">
+                                                Orange
+                                            </option>
+                                            <option value="violet" name="color" class="violet">
+                                                Violet
+                                            </option>
+                                            <option value="black" name="color" class="black">
+                                                Black
+                                            </option>
+                                            <option value="white" name="color" class="t-light">
+                                                White
+                                            </option>
+                                        </div>
+                                    </select>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="check-box">
+                                <p class="t-lightning-blue">
+                                    Hobbies:
+                                </p>
+                            </div>
+                            <div class="check-con t-lightning-blue">
+                                <div class="col1">
+                                    <input type="checkbox" name="hobby" id="lmusic">
+                                    <label for="lmusic">Listening music.</label><br>
+                                    <input type="checkbox" name="hobby" id="drawing">
+                                    <label for="drawing">Drawing.</label><br>
+                                    <input type="checkbox" name="hobby" id="pgames">
+                                    <label for="pgames">Playing computer games.</label><br>
+                                    <input type="checkbox" name="hobby" id="instruments">
+                                    <label for="instruments">Playing music instruments.</label><br>
+                                    <input type="checkbox" name="hobby" id="cook">
+                                    <label for="cook">Cooking.</label><br>
+                                </div>
+                                <div class="col2">
+                                    <input type="checkbox" name="hobby" id="swim">
+                                    <label for="swim">Swimming.</label><br>
+                                    <input type="checkbox" name="hobby" id="Sport">
+                                    <label for="Sport">Playing sports.</label><br>
+                                    <input type="checkbox" name="hobby" id="vlog">
+                                    <label for="vlog">Vlogging.</label><br>
+                                    <input type="checkbox" name="hobby" id="babe-time">
+                                    <label for="babe-time">Spending time to someone.</label><br>
+                                    <input type="checkbox" name="hobby" id="other">
+                                    <label for="other">other:
+                                        <br><input type="text" class="light" name="hobby" id=""></label><br>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </div>
+                <div class="5th-row">
+                    <tr>
+                        <td colspan="3">
+                            <div class="button">
+                                <div class="sub">
+                                    <input type="submit" class=" t-lightning-blue " value="Submit">
+                                </div>
+                                <div class="clear">
+                                    <input type="reset" class=" t-lightning-blue " value="Clear">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </div>
+            </table>
+        </div>
+    </form>
+</body>
+
+</html>
